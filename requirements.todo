@@ -1,0 +1,9 @@
+User Experience Requirements:
+    - The starting scren should have a button that users can click to start the quiz.
+    - Users should be prompted through a series of at least 5 muiltiple choice questions that they can answser.
+        - Users should be asked questions 1 after the other
+        - Users should only be prompted with 1 questions at a time.
+    - Users should not be able to skip questions
+    - Users should also be able to see which questions they're on (for instance, "7 out of 10") and their current score ("5 correct, 2 incorrect").
+    - 
+    

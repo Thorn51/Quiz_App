@@ -1,3 +1,13 @@
+
+Process Requirements: 
+    - First, decide on your quiz topic, then write up questions and answers as discussed above. @done
+    - Gather any image assets you want for your app. @done
+    - Create "back of napkin" designs of the basic layout of your prototype. @done
+    - From your back of napkin designs, create greybox HTML wireframes.
+        - Your wireframe should include minimal CSS and no JavaScript.
+        - Store your wireframe on GitHub and deploy it to GitHub pages.
+
+
 User Experience Requirements:
     - The starting scren should have a button that users can click to start the quiz.
     - Users should be prompted through a series of at least 5 muiltiple choice questions that they can answser.
@@ -5,5 +15,20 @@ User Experience Requirements:
         - Users should only be prompted with 1 questions at a time.
     - Users should not be able to skip questions
     - Users should also be able to see which questions they're on (for instance, "7 out of 10") and their current score ("5 correct, 2 incorrect").
-    - 
+    - Upon submitting an answer, users should:
+        - receive textual feedback about their answer. If they were incorrect, they should be told the correct answer.
+        - be moved onto the next question (or interact withn an element to move on).
+    - Users should be shown tehir overall score at the end of the quiz. In other words, how many questions they got right of the total questions asked
+    - Users should be able to start a new quiz.
+
+Technical Requirements (the quiz app must):
+    - Render answer choices in a <form>.
+    - User semantic HTML, along with CSS and jQuery
+    - Follow a11y best practices
+    - User responsive design.
+    - be fully usable by keyboard.
+
+
+
+
     

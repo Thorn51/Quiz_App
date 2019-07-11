@@ -3,8 +3,8 @@ Process Requirements:
     - First, decide on your quiz topic, then write up questions and answers as discussed above. @done
     - Gather any image assets you want for your app. @done
     - Create "back of napkin" designs of the basic layout of your prototype. @done
-    - From your back of napkin designs, create greybox HTML wireframes.
-        - Your wireframe should include minimal CSS and no JavaScript.
+    - From your back of napkin designs, create greybox HTML wireframes. @done
+        - Your wireframe should include minimal CSS and no JavaScript. @done
         - Store your wireframe on GitHub and deploy it to GitHub pages.
 
 

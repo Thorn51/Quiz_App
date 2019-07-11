@@ -4,7 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>jQuery Quiz</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <header></header>
+
+    <div class="container">
+      <div class="left-column"></div>
+      <div class="question-column">
+        <h1 class="question">What is the result of this block of code?</h1>
+        <code class="example-code-block">
+          $(".menu") .on("mouseenter", function() { $(".nav-menu").show(500);})
+          .on("mouseleave", function() { $(".nav-menu").hide(500); });
+        </code>
+        <form class="answer-slection">
+          <div>
+            <input type="radio" name="answer-a" value="correct" /> The menu will
+            be hidden when the menu with #mouseenter id is clicked.
+          </div>
+          <div>
+            <input type="radio" name="answer-b" value="incorrect" />The menu
+            will be shown to the user when the mouse enters the menu area and
+            the menu will be hidden when the mouse leaves the menu area.
+          </div>
+          <div>
+            <input type="radio" name="answer-c" value="incorrect" />Nothing,
+            this code is incorrect.<br />
+          </div>
+          <div>
+            <input type="radio" name="answer-d" value="incorrect" />The nav menu
+            will be shown when the nav menu is clicked, and hidden when the
+            mouse leaves the menu area.
+          </div>
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+      <div class="right-column"></div>
+    </div>
+  </body>
 </html>

@@ -41,7 +41,7 @@ h1 {
 }
 
 .question-column {
-  flex: 2;
+  flex: 1;
   display: grid;
   justify-content: center;
   border: 1px black solid;

@@ -6,6 +6,11 @@ Process Requirements:
     - From your back of napkin designs, create greybox HTML wireframes. @done
         - Your wireframe should include minimal CSS and no JavaScript. @done
         - Store your wireframe on GitHub and deploy it to GitHub pages. @done
+    - Stage 2
+        - Refer back to the user stories we asked you to consider in a previous checkpoint. Use them to keep sight of what features your app still needs as you go along.
+        - Next create function stubs with pseudocode in your JavaScript.
+        - One by one, fully implement each function.
+        - Once your application is working, add CSS styling to make it look good.
 
 
 User Experience Requirements:

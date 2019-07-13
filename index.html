@@ -7,9 +7,25 @@
     <title>jQuery Quiz</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <header></header>
+    <header>
+      <div class="header-container">
+        <div class="jquery-logo">
+          <img src="images/jquery-mark-dark.gif" alt="jQuery Quiz" />
+        </div>
+        <div class="stars">
+          <span class="fa fa-star"></span>
+        </div>
+        <div class="right-content">
+          <span>1/10</span>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="container">
         <form class="question-block-form">
@@ -23,13 +39,12 @@
             </code>
           </div>
           <button type="button" class="answer-choice" class="answer-choice">
-            The menu will be hidden when the menu with #mouseenter id is
+            The menu will be hidden when an element with a mouseenter id is
             clicked.
           </button>
           <button type="button" class="answer-choice">
             The menu will be shown to the user when the mouse enters the menu
-            area and the menu will be hidden when the mouse leaves the menu
-            area.
+            area and hidden when the mouse leaves the area.
           </button>
           <button type="button" class="answer-choice" class="answer-choice">
             Nothing, this code is incorrect.
@@ -44,5 +59,6 @@
         </form>
       </div>
     </main>
+    <footer></footer>
   </body>
 </html>

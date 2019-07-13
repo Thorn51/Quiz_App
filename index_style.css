@@ -29,13 +29,12 @@ main {
 }
 
 .container {
-  flex: 1;
   display: grid;
-  grid-gap: 0.5em;
-  grid-template-rows: repeat(auto, 1fr);
-  margin-top: 25px;
+  grid-auto-rows: max-content;
+  grid-auto-columns: 100%;
+  grid-gap: 0.8em;
+  margin: 25px;
   justify-content: center;
-  height: 85%;
   opacity: 1;
 }
 
@@ -45,14 +44,17 @@ h2 {
   text-align: center;
 }
 
-p {
+.quiz-selection {
+  height: fit-content;
+}
+
+p. {
   margin: 0px;
   padding: 5px;
 }
 
 .instructions {
   width: 100%;
-  height: auto;
   color: white;
   margin: 5px;
   justify-content: center;

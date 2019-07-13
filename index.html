@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>jQuery Quiz</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
   </head>
   <body>
     <header></header>
-
-    <div class="container">
-      <div class="question-column">
-        <form class="answer-selection">
-          <h2 class="question">What is the result of this block of code?</h2>
+    <main>
+      <div class="container">
+        <form class="question-block-form">
+          <h2 class="question-text">
+            What is the result of this block of code?
+          </h2>
           <div class="example-code-block">
-            <code>
-              (".menu").on("mouseenter", function() {
-              $(".nav-menu").show(500);})
-              .on("mouseleave", function() 
-              $(".nav-menu").hide(500); });
+            <code class="prettyprint">
+              $(".menu").on("mouseenter", function() { $(".nav-menu").show(500);
+              }).on("mouseleave", function() { $(".nav-menu").hide(500); });
             </code>
           </div>
           <button type="button" class="answer-choice" class="answer-choice">
@@ -35,15 +35,14 @@
             Nothing, this code is incorrect.
           </button>
           <button type="button" class="answer-choice" class="answer-choice">
-            The nav menu will be shown when the nav menu is clicked, and
-            hidden when the mouse leaves the menu area.
+            The nav menu will be shown when the nav menu is clicked, and hidden
+            when the mouse leaves the menu area.
           </button>
           <button type="submit" value="Submit" class="submit-button">
             Check Answer
           </button>
-          </div>
         </form>
       </div>
-    </div>
+    </main>
   </body>
 </html>

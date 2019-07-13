@@ -176,7 +176,7 @@ main {
   }
 
   .container {
-    flex: 0.9;
+    flex: 0.7;
   }
 
   .question-block-form {
@@ -184,21 +184,21 @@ main {
   }
 
   .question-text {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 
   .example-code-block {
     width: 95%;
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .answer-choice {
-    font-size: 1.7em;
+    font-size: 1.2em;
     padding: 5px;
   }
 
   .submit-button {
-    font-size: 1.7em;
+    font-size: 1.2em;
   }
 
   footer {

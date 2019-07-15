@@ -15,12 +15,7 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="jquery-logo">
-          <img
-            src="Images/http___pluspng.com_img-png_jquery-logo-vector-png-jquery-logo-1876.png"
-            alt="jQuery Quiz"
-          />
-        </div>
+        <div class="jquery-logo"></div>
         <div class="stars">
           <span class="progress">1/10</span>
           <span class="fa fa-star"></span>
@@ -51,23 +46,31 @@
               }).on("mouseleave", function() { $(".nav-menu").hide(500); });
             </code>
           </div>
-          <button type="button" class="answer-choice" class="answer-choice">
-            The menu will be hidden when an element with a mouseenter id is
-            clicked.
-          </button>
-          <button type="button" class="answer-choice">
-            The menu will be shown to the user when the mouse enters the menu
-            area and hidden when the mouse leaves the area.
-          </button>
-          <button type="button" class="answer-choice" class="answer-choice">
-            Nothing, this code is incorrect.
-          </button>
-          <button type="button" class="answer-choice" class="answer-choice">
-            The nav menu will be shown when the nav menu is clicked, and hidden
-            when the mouse leaves the menu area.
-          </button>
-          <button type="submit" value="Submit" class="submit-button">
-            Check Answer
+          <a href="incorrect.html"
+            ><button type="button" class="answer-choice">
+              The menu will be hidden when an element with a mouseenter id is
+              clicked.
+            </button></a
+          >
+          <a href="correct.html"
+            ><button type="button" class="answer-choice">
+              The menu will be shown when the mouse enters the menu element area
+              and the menu will be hiddne when the mouse leaves.
+            </button></a
+          >
+          <a href="incorrect.html"
+            ><button type="button" class="answer-choice">
+              Nothing, this code is incorrect.
+            </button></a
+          >
+          <a href="incorrect.html">
+            <button type="button" class="answer-choice">
+              The nav menu will be shown when the nav menu is clicked, and
+              hidden when the mouse leaves the menu area.
+            </button></a
+          >
+          <button type="submit" value="Submit" class="submit-button" disabled>
+            Check Answer - (Inactive in Wireframe)
           </button>
         </form>
       </div>

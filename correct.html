@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>jQuery Quiz</title>
+  <link rel="stylesheet" type="text/css" href="question_styles.css" />
+  <script
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="jquery-logo"></div>
+      <div class="stars">
+        <span class="progress">1/10</span>
+        <span class="fa fa-star" style="color: green"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </div>
+      <div class="right-content">
+        <span>1/10</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <form class="question-block-form">
+        <h2 class="question-text">
+          What is the result of this block of code?
+        </h2>
+        <div class="correct">
+          <span>
+            That's correct! The mouseover event is sent to an element when the
+            mouse pointer enters the element. Any HTML element can receive
+            this event.
+            <a href="https://api.jquery.com/mouseover/">https://api.jquery.com/mouseover/</a>
+          </span>
+        </div>
+        <button type="button" class="answer-choice" class="answer-choice">
+          The menu will be hidden when an element with a mouseenter id is
+          clicked.
+        </button>
+        <button type="button" class="answer-choice">
+          The menu will be shown to the user when the mouse enters the menu
+          area and hidden when the mouse leaves the area.
+        </button>
+        <button type="button" class="answer-choice" class="answer-choice">
+          Nothing, this code is incorrect.
+        </button>
+        <button type="button" class="answer-choice" class="answer-choice">
+          The nav menu will be shown when the nav menu is clicked, and hidden
+          when the mouse leaves the menu area.
+        </button>
+        <a href="final.html">
+          <button type="button" class="next-button">
+            Next
+          </button></a>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
+</html>

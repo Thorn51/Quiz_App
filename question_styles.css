@@ -27,14 +27,6 @@ header {
   overflow: hidden;
 }
 
-.jquery-logo {
-  flex: 0.1;
-  justify-items: left;
-  height: 80%;
-  overflow: hidden;
-  margin: 5px;
-}
-
 img {
   display: none;
   height: 80%;
@@ -83,12 +75,33 @@ main {
   padding: 10px;
 }
 
-.example-code-block {
+.example-code-block,
+.incorrect,
+.correct {
   width: 80%;
   height: auto;
   margin: 5px;
   justify-content: center;
   font-size: 1em;
+}
+
+.incorrect {
+  border: 2px red solid;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+.correct {
+  border: 2px green solid;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
+
+a {
+  color: white;
+  width: 100%;
 }
 
 .answer-choice {
@@ -102,6 +115,20 @@ main {
   text-align: justify;
   border-radius: 10px;
   padding: 1px;
+}
+
+.next-button {
+  min-height: 4em;
+  width: 100%;
+  background-color: green;
+  font-size: 0.8em;
+  text-align: justify;
+  border-radius: 10px;
+  padding: 1px;
+  border: 4px solid rgb(49, 49, 77);
+  color: white;
+  text-align: center;
+  font-weight: bold;
 }
 
 .submit-button {
@@ -123,13 +150,18 @@ main {
     font-size: 1.5em;
   }
 
-  .example-code-block {
+  .example-code-block,
+  .incorrect,
+  .correct {
     font-size: 1.2em;
   }
 
   .answer-choice {
     font-size: 1em;
     padding: 5px;
+  }
+  .next-button {
+    font-size: 1em;
   }
 
   .submit-button {
@@ -159,14 +191,21 @@ main {
     font-size: 2.5em;
   }
 
-  .example-code-block {
-    width: 95%;
+  .example-code-block,
+  .incorrect,
+  .correct {
+    width: 100%;
     font-size: 1.7em;
   }
 
   .answer-choice {
     font-size: 1.7em;
   }
+
+  .next-button {
+    font-size: 1.7em;
+  }
+
 
   .submit-button {
     font-size: 1.7em;
@@ -195,8 +234,10 @@ main {
     font-size: 2em;
   }
 
-  .example-code-block {
-    width: 95%;
+  .example-code-block,
+  .incorrect,
+  .correct {
+    width: 100%;
     font-size: 1.5em;
   }
 
@@ -204,6 +245,11 @@ main {
     font-size: 1.5em;
     padding: 5px;
   }
+
+  .next-button {
+    font-size: 1.5em;
+  }
+
 
   .submit-button {
     font-size: 1.5em;

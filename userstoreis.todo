@@ -1,0 +1,13 @@
+User Story:
+- Enters Quiz App
+- Selects Quiz Type
+- The first question is rendered onto the page
+- User reads question, then answers. 
+- Selects an answer
+- User then selects check answer button
+- User reviews feedback correct/incorrect 
+- User selects continue
+- A new question is rendered and process restarts 
+- End of quiz user selects finish 
+- User reviews results page
+- User selects retake quiz, or new quiz

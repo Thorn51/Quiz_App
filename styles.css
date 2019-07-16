@@ -13,11 +13,6 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: max-content;
-  overflow: hidden;
   width: 100%;
   height: 5%;
   color: white;
@@ -34,10 +29,6 @@ header {
   text-align: center;
 }
 
-.right-content {
-  flex: 0.1;
-}
-
 main {
   display: flex;
   justify-content: center;
@@ -45,12 +36,37 @@ main {
 }
 
 .container {
-  flex: 1;
-  display: flex;
-  margin-top: 25px;
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-columns: 100%;
+  grid-gap: 0.8em;
+  margin: 25px;
   justify-content: center;
-  height: 85%;
   opacity: 1;
+}
+
+h2 {
+  color: white;
+  margin: 0px;
+  text-align: left;
+}
+
+p {
+  margin: 0px;
+  padding: 5px;
+}
+
+button {
+  min-height: 4em;
+  width: 100%;
+  background-color: transparent;
+  border: 4px solid rgba(192, 192, 192, 0.5);
+  color: white;
+  background-color: rgba(192, 192, 192, 0.089);
+  font-size: 1em;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1px;
 }
 
 .question-block-form {
@@ -112,11 +128,6 @@ a {
   padding: 1px;
 }
 
-p {
-  margin: 0px;
-  padding: 5px;
-}
-
 .instructions {
   width: 100%;
   color: white;
@@ -169,6 +180,11 @@ p {
 }
 
 @media only screen and (min-width: 375px) {
+  
+  .quiz-selection {
+    text-align: center
+  }
+
   .question-block-form {
     grid-row-gap: 0.4em;
   }
@@ -200,6 +216,26 @@ p {
   header {
     height: 5%;
   }
+
+  .quiz-selector-title {
+    font-size: 2em;
+  }
+
+  .quiz-selection {
+    font-size: 1.8em;
+    text-align: center
+  }
+
+  .jquery-quiz-selector, .javascript-quiz-selector, .css-quiz-selector, .html-quiz-selector {
+    font-size: 1.8em;
+  }
+
+  .jquery-quiz-selector:hover,
+.jquery-quiz-selector:active {
+  border: 3px solid green;
+  font-size: 1.8em;
+  font-weight: bolder;
+}
 
   .stars {
     font-size: 1.5em;
@@ -244,17 +280,40 @@ p {
     height: 10%;
   }
 
+  .quiz-selector-title {
+    font-size: 2.5em;
+  }
+
+  .jquery-quiz-selector, .javascript-quiz-selector, .css-quiz-selector, .html-quiz-selector {
+    font-size: 2em;
+  }
+
+  .jquery-quiz-selector:hover,
+.jquery-quiz-selector:active {
+  border: 3px solid green;
+  font-size: 2em;
+  font-weight: bolder;
+}
+
   .stars {
     font-size: 2em;
     padding: 20px;
   }
 
   .container {
-    flex: 0.8;
+    flex: 0.7;
   }
 
   .question-block-form {
     grid-row-gap: 0.5em;
+  }
+
+  .quiz-selection {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.7em;
   }
 
   .question-text {

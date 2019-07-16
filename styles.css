@@ -40,7 +40,7 @@ main {
   grid-auto-rows: max-content;
   grid-auto-columns: 100%;
   grid-gap: 0.8em;
-  margin: 25px;
+  margin: 10px;
   justify-content: center;
   opacity: 1;
 }
@@ -74,6 +74,16 @@ button {
   justify-items: center;
   grid-row-gap: 0.4em;
   grid-template-rows: repeat(auto, 10%);
+  height: 100%;
+}
+
+fieldset {
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 0.4em;
+  height: 100%;
+  border: none;
+  padding: 0px;
 }
 
 .question-text {
@@ -180,9 +190,8 @@ a {
 }
 
 @media only screen and (min-width: 375px) {
-  
   .quiz-selection {
-    text-align: center
+    text-align: center;
   }
 
   .question-block-form {
@@ -223,19 +232,22 @@ a {
 
   .quiz-selection {
     font-size: 1.8em;
-    text-align: center
+    text-align: center;
   }
 
-  .jquery-quiz-selector, .javascript-quiz-selector, .css-quiz-selector, .html-quiz-selector {
+  .jquery-quiz-selector,
+  .javascript-quiz-selector,
+  .css-quiz-selector,
+  .html-quiz-selector {
     font-size: 1.8em;
   }
 
   .jquery-quiz-selector:hover,
-.jquery-quiz-selector:active {
-  border: 3px solid green;
-  font-size: 1.8em;
-  font-weight: bolder;
-}
+  .jquery-quiz-selector:active {
+    border: 3px solid green;
+    font-size: 1.8em;
+    font-weight: bolder;
+  }
 
   .stars {
     font-size: 1.5em;
@@ -269,7 +281,6 @@ a {
     font-size: 1.7em;
   }
 
-
   .submit-button {
     font-size: 1.7em;
   }
@@ -284,16 +295,19 @@ a {
     font-size: 2.5em;
   }
 
-  .jquery-quiz-selector, .javascript-quiz-selector, .css-quiz-selector, .html-quiz-selector {
+  .jquery-quiz-selector,
+  .javascript-quiz-selector,
+  .css-quiz-selector,
+  .html-quiz-selector {
     font-size: 2em;
   }
 
   .jquery-quiz-selector:hover,
-.jquery-quiz-selector:active {
-  border: 3px solid green;
-  font-size: 2em;
-  font-weight: bolder;
-}
+  .jquery-quiz-selector:active {
+    border: 3px solid green;
+    font-size: 2em;
+    font-weight: bolder;
+  }
 
   .stars {
     font-size: 2em;
@@ -335,7 +349,6 @@ a {
   .next-button {
     font-size: 1.5em;
   }
-
 
   .submit-button {
     font-size: 1.5em;

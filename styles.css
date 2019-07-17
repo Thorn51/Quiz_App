@@ -8,8 +8,16 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   background-color: black;
+}
+
+main {
+  flex: .9;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -23,12 +31,13 @@ header {
 }
 
 .question-header {
+  flex: .1;
   display: flex;
   flex-direction: row;
 }
 
 .stars {
-  flex: 0.8;
+  flex: 0.7;
   height: fit-content;
   color: darkgray;
   text-align: center;
@@ -42,12 +51,6 @@ header {
 .score {
   flex: .1;
   height: fit-content;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  height: 100%;
 }
 
 .container {

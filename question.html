@@ -7,14 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>jQuery Quiz</title>
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script
-    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
 <body>
-  <header>
-    <div class="question-header">
+  <main class="question">
+    <header class="question-header">
       <div class="progress">
         <span class="question-numbers">`${questionNumber}/10`</span>
       </div>
@@ -33,9 +32,7 @@
       <div class="score">
         <span>`Score ${score}`</span>
       </div>
-    </div>
-  </header>
-  <main>
+    </header>
     <div class="container">
       <form class="question-block-form">
         <fieldset>

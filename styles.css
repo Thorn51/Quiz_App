@@ -22,11 +22,26 @@ header {
   text-align: center;
 }
 
+.question-header {
+  display: flex;
+  flex-direction: row;
+}
+
 .stars {
   flex: 0.8;
   height: fit-content;
   color: darkgray;
   text-align: center;
+}
+
+.progress {
+  flex: .1;
+  height: fit-content;
+}
+
+.score {
+  flex: .1;
+  height: fit-content;
 }
 
 main {
@@ -249,7 +264,7 @@ a {
     font-weight: bolder;
   }
 
-  .stars {
+  .stars, .score, .progress {
     font-size: 1.5em;
     padding: 10px;
   }
@@ -309,7 +324,7 @@ a {
     font-weight: bolder;
   }
 
-  .stars {
+  .stars, .score, .progress {
     font-size: 2em;
     padding: 20px;
   }

@@ -30,23 +30,23 @@ const QUESTIONS = [
     id: 2,
     type: "jq",
     question:
-      "Which jQuery object would you use to target all elements with the help-button class?",
+      "Question 2?",
     exampleCode: null,
     answers: [
       {
-        answerOne: "$(‘#help-button’)",
+        answerOne: "Answer A",
         correct: false
       },
       {
-        answerTwo: "(‘.help-button’)",
+        answerTwo: "Answer B",
         correct: false
       },
       {
-        answerThree: "$(‘.help-button’)",
+        answerThree: "Answer C",
         correct: true
       },
       {
-        answerFour: "$(.help-button)",
+        answerFour: "Answer D",
         correct: false
       }
     ],

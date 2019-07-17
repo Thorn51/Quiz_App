@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Thinkful Quiz App</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <h1 class="quiz-selector-title">Thinkful Quiz</h1>
-    </header>
-    <main></main>
-    <footer></footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Thinkful Quiz App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?skin=sunburst"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="quiz-selector-title">Thinkful Quiz</h1>
+  </header>
+  <main>
+    <div class=".container-quiz-type-selection">
+      <h2 class="quiz-selection">
+        What would you like to be quizzed on?
+      </h2>
+      <div class="instructions">
+        <p>Select one of the topics below to start a 10 question quiz.</p>
+      </div>
+      <button type="button" class="jquery-quiz-selector" value="jq">jQuery</button>
+      <button type="button" class="javascript-quiz-selector" disabled>
+        JavaScript - Coming Soon!
+      </button>
+      <button type="button" class="css-quiz-selector" disabled>
+        CSS - Coming Soon!
+      </button>
+      <button type="button" class="html-quiz-selector" disabled>
+        HTML -Coming Soon!
+      </button>
+    </div>
+  </main>
+  <footer></footer>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="main.js"></script>
+</body>
+
 </html>

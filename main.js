@@ -1,88 +1,86 @@
-let quizType = "";
-let quizLocation = 0;
-let score = 0;
+$('document').ready(function () {
 
-function startQuiz() {}
+  let quizType = "";
+  let quizLocation = 0;
+  let score = 0;
+  let questionNumber = 1;
 
-function createQuestion() {
-  if (quizLocation < QUESTIONS.length) {
-    if (QUESTIONS[quizLocation].exampleCode === null) {
-      $(".example-code-block").hide();
-    } else {
-      $(".example-code-block").show();
-    }
-    return (
-      <div class="container">
-        <form class="question-block-form">
-          <fieldset>
-            <legend>
-              <h2 class="question-text">
-                `${QUESTIONS[quizLocation].question}`
-              </h2>
-              <div class="example-code-block">
-                <code class="prettyprint">
-                  `${QUESTIONS[quizLocation].exampleCode}`
-                </code>
-              </div>
-            </legend>
-            <button
-              type="button"
-              class="answer-choice a"
-              value="`$QUESTIONS[quizLocation].answers[0].correct`"
-            >
-              `${QUESTIONS[quizLocation].answers[0].answerOne}`
-            </button>
-            <button
-              type="button"
-              class="answer-choice b"
-              value="`$QUESTIONS[quizLocation].answers[1].correct`"
-            >
-              `${QUESTIONS[quizLocation].answers[1].answerTwo}`
-            </button>
-            <button
-              type="button"
-              class="answer-choice c"
-              value="`$QUESTIONS[quizLocation].answers[2].correct`"
-            >
-              `${QUESTIONS[quizLocation]}.answers[2].answerThree}`
-            </button>
-            <button
-              type="button"
-              class="answer-choice d"
-              value="`$QUESTIONS[quizLocation].answers[3].correct`"
-            >
-              `${QUESTIONS[quizLocation]}.answers[3].answerFour}`
-            </button>
-            <button type="submit" value="Submit" class="submit-button">
-              Check Answer
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    );
+  //start the quiz
+  function startQuiz() {
+    // user selects quiz type 
+    $('.container-quiz-type-selection').on('click', '.jquery-quiz-selector', function (event) {
+      //set quiz type
+      quizType = $('.jquery-quiz-selector').val();
+      // quiz selection choices are hiddent
+      $('.container-quiz-type-selection', '.quiz-selector-title').hide(500);
+      // questions are rendered to DOM
+      renderQuizQuestion();
+    })
+
   }
-}
 
-function renderQuestion() {}
+  // Generate the question html
+  function createQuestion() {
+    // better to store code in variable?
+    let questionCode = ``
+    if (quizLocation < QUESTIONS.length) {
+      return questionCode;
+    } else {
+      finishQuiz();
+    };
+  };
 
-function checkAnswer() {}
+  // add quiz question to DOM
+  function renderQuizQuestion() {
 
-function calculateScore() {}
+  };
 
-function rightAnswer() {}
+  // User can select and unselect answer choices
+  function selectAnser() {
 
-function wrongAnswer() {}
+  };
 
-function feedbackCorrect() {}
+  // Submit answer selection
+  function submitAnswer() {
+    // check if answer is correct
+    // provide feedback
+    // show next button on DOM
+  };
 
-function feedbackWrong() {}
+  // Provide feedback after the asnwer is submitted
+  function feedback() {
+    // if code example block is present then hide
+    // show feedbac based on question result
+    // change color of star in header based on right or wrong
+  };
 
-function renderResults() {}
+  //after question submitted, add next button to DOM
+  function nextQuestion() {
+    //increment quiz location
+    //increment question number
+    //change question number in header
+    // 
+  };
 
-function nextQuestion() {}
+  // when all 10 questions are answered 
+  function finishQuiz() {
+    //Show finish button on DOM
+  };
 
-function restartQuiz() {}
+  //display results on DOM
+  function results() {
+    //calculate score
+    //render results on DOM
+    //render restart button on DOM (Does restart reset quiz variables?)
+    //render select a different quiz on DOM 
+  }
 
-function createQuiz() {}
 
-$(createQuiz);
+
+
+
+
+});
+
+
+

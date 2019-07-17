@@ -1,86 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>jQuery Quiz</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <div class="header-container">
-        <div class="jquery-logo"></div>
-        <div class="stars">
-          <span class="progress">1/10</span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-        <div class="right-content">
-          <span></span>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>jQuery Quiz</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script
+    src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?lang=javascript&amp;skin=sunburst"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="stars">
+        <span class="progress">1/10</span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
       </div>
-    </header>
-    <main>
-      <div class="container">
-        <form class="question-block-form">
-          <fieldset>
-            <legend>
-              <h2 class="question-text">
-                What is the result of this block of code?
-              </h2>
-              <div class="example-code-block">
-                <code class="prettyprint">
+      <div class="right-content">
+        <span></span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <form class="question-block-form">
+        <fieldset>
+          <legend>
+            <h2 class="question-text">
+              What is the result of this block of code?
+            </h2>
+            <div class="example-code-block">
+              <code class="prettyprint">
                   $(".menu").on("mouseenter", function() {
                   $(".nav-menu").show(500); }).on("mouseleave", function() {
                   $(".nav-menu").hide(500); });
                 </code>
-              </div>
-            </legend>
-            <a href="incorrect.html"
-              ><button type="button" class="answer-choice">
-                The menu will be hidden when an element with a mouseenter id is
-                clicked.
-              </button></a
-            >
-            <a href="correct.html"
-              ><button type="button" class="answer-choice">
-                The menu will be shown when the mouse enters the menu element
-                area and the menu will be hiddne when the mouse leaves.
-              </button></a
-            >
-            <a href="incorrect.html"
-              ><button type="button" class="answer-choice">
-                Nothing, this code is incorrect.
-              </button></a
-            >
-            <a href="incorrect.html">
-              <button type="button" class="answer-choice">
-                The nav menu will be shown when the nav menu is clicked, and
-                hidden when the mouse leaves the menu area.
-              </button></a
-            >
-            <button type="submit" value="Submit" class="submit-button" disabled>
-              Check Answer - (Inactive in Wireframe)
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+            </div>
+          </legend>
+          <a href="incorrect.html"><button type="button" class="answer-choice">
+              The menu will be hidden when an element with a mouseenter id is
+              clicked.
+            </button></a>
+          <a href="correct.html"><button type="button" class="answer-choice">
+              The menu will be shown when the mouse enters the menu element
+              area and the menu will be hiddne when the mouse leaves.
+            </button></a>
+          <a href="incorrect.html"><button type="button" class="answer-choice">
+              Nothing, this code is incorrect.
+            </button></a>
+          <a href="incorrect.html">
+            <button type="button" class="answer-choice">
+              The nav menu will be shown when the nav menu is clicked, and
+              hidden when the mouse leaves the menu area.
+            </button></a>
+          <button type="submit" value="Submit" class="submit-button" disabled>
+            Check Answer - (Inactive in Wireframe)
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+  <footer></footer>
+</body>
+
 </html>

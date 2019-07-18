@@ -40,14 +40,14 @@ function createQuestion() {
                   </div>
               </legend>
               <button type="button" class="answer-choice a"
-                  value="$QUESTIONS[quizLocation].answers[0].correct">${QUESTIONS[quizLocation].answers[0].answerOne}</button>
+                  value="${QUESTIONS[quizLocation].answers[0].correct}">${QUESTIONS[quizLocation].answers[0].answerOne}</button>
               <button type="button" class="answer-choice b"
-                  value="$QUESTIONS[quizLocation].answers[1].correct">${QUESTIONS[quizLocation].answers[1].answerTwo}</button>
+                  value="${QUESTIONS[quizLocation].answers[1].correct}">${QUESTIONS[quizLocation].answers[1].answerTwo}</button>
               <button type="button" class="answer-choice c"
-                  value="$QUESTIONS[quizLocation].answers[2].correct">${QUESTIONS[quizLocation].answers[2].answerThree}</button>
+                  value="${QUESTIONS[quizLocation].answers[2].correct}">${QUESTIONS[quizLocation].answers[2].answerThree}</button>
               <button type="button" class="answer-choice d"
-                  value="$QUESTIONS[quizLocation].answers[3].correct">${QUESTIONS[quizLocation].answers[3].answerFour}</button>
-              <button type="submit" value="Submit" class="submit-button">Check Answer</button>
+                  value="${QUESTIONS[quizLocation].answers[3].correct}">${QUESTIONS[quizLocation].answers[3].answerFour}</button>
+              <button type="button" class="check-answer" disabled>Check Answer</button>
           </fieldset>
       </form>
   </div>`;
@@ -62,12 +62,18 @@ function createQuestion() {
 // add quiz question to DOM
 function renderQuizQuestion() {
   $('body').html(createQuestion());
+  selectAnswer();
 };
 
 // User can select and unselect answer choices
-function selectAnser() {
-  $('.answer-choice').on('click', '.answer-choice', function (event) {
-
+function selectAnswer() {
+  $('.answer-choice').on('click', function (event) {
+    let $answer = $(this).val();
+    console.log($answer);
+    event.preventDefault();
+    $('.answer-choice').not(this).removeClass('selected');
+    $(this).toggleClass('selected')
+    $('.check-answer').removeAttr('disabled');
   })
 };
 

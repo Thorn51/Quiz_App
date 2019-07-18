@@ -2,6 +2,7 @@ let quizType = "";
 let quizLocation = 0;
 let score = 0;
 let questionNumber = 1;
+let results = [];
 
 // Generate the question html
 function createQuestion() {
@@ -67,30 +68,50 @@ function renderQuizQuestion() {
 
 // User can select and unselect answer choices
 function selectAnswer() {
+  results.push({ 'question': questionNumber, 'correct': '' });
   $('.answer-choice').on('click', function (event) {
-    let $answer = $(this).val();
-    console.log($answer);
     event.preventDefault();
     $('.answer-choice').not(this).removeClass('selected');
     $(this).toggleClass('selected')
     $('.check-answer').removeAttr('disabled');
-  })
+    results[quizLocation].correct = $(this).val();
+  });
 };
 
 // Submit answer selection
-function submitAnswer() {
+function checkAnswer() {
   // check if answer is correct
-  // provide feedback
-  // show next button on DOM
+  $('.check-answer').on('click', function (event) {
+    event.preventDefault();
+    alert('I was clicked')
+    if (results[quizLocation].correct === true) {
+      $('.question-block-form').html(correctFeedback());
+    } else {
+      $('.question-block-form').html(incorrectFeeback());
+    }
+  });
 };
 
 // Provide feedback after the asnwer is submitted
-function feedback() {
+function correctFeedback() {
   // if code example block is present then hide
   // show feedbac based on question result
   // change color of star in header based on right or wrong
+  let correctFeeback = ` 
+  <div class="correct">
+    <h2>That's Correct!</h2>
+    <p>${QUESTIONS[quizLocation].feedback}</p>
+  </div>`;
 };
 
+function incorrectFeeback() {
+  let incorrectFeedback = ` 
+  <div class="incorrect">
+    <h2>That's Incorrect</h2>
+    <p>${QUESTIONS[quizLocation].feedback}</p>
+    <button type="button" class="next-button>Next
+  </div>`;
+}
 //after question submitted, add next button to DOM
 function nextQuestion() {
   //increment quiz location
@@ -105,7 +126,7 @@ function finishQuiz() {
 };
 
 //display results on DOM
-function results() {
+function resultCalcs() {
   //calculate score
   //render results on DOM
   //render restart button on DOM (Does restart reset quiz variables?)
@@ -125,6 +146,7 @@ function startQuiz() {
     // questions are rendered to DOM
     createQuestion();
     renderQuizQuestion();
+    checkAnswer();
   })
 };
 

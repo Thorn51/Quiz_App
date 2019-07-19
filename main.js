@@ -74,6 +74,10 @@ function renderQuizQuestion() {
     $('.example-code-block').show();
   };
   selectAnswer();
+  checkAnswer();
+  correctFeedback();
+  incorrectFeeback();
+  nextQuestion();
 };
 
 // User can select and unselect answer choices
@@ -100,6 +104,7 @@ function checkAnswer() {
       $('.next-button').show();
       $('.answer-choice').prop('disabled', true);
       score++;
+      $('.score').change();
     } else {
       $('.feedback').append(incorrectFeeback()).show();
       $('.check-answer').hide();
@@ -112,7 +117,7 @@ function checkAnswer() {
 // Provide feedback after the asnwer is submitted
 function correctFeedback() {
   // if code example block is present then hide
-  // show feedbac based on question result
+  // show feedback based on question result
   // change color of star in header based on right or wrong
   let correctFeeback = ` 
   <div class="correct">
@@ -132,11 +137,16 @@ function incorrectFeeback() {
 }
 //after question submitted, add next button to DOM
 function nextQuestion() {
-
-  //increment quiz location
-  //increment question number
-  //change question number in header
-  // 
+  $('.next-button').on('click', function (event) {
+    event.preventDefault();
+    alert('I was clicked')
+    //increment quiz location
+    quizLocation++;
+    //increment question number
+    //change question number in header
+    questionNumber++;
+    renderQuizQuestion();
+  })
 };
 
 // when all 10 questions are answered 
@@ -160,14 +170,11 @@ function startQuiz() {
     event.preventDefault();
     //set quiz type
     quizType = $('.jquery-quiz-selector').val();
-    // quiz selection choices are hiddent
+    // quiz selection choices are hidden
     $('index').remove();
     // questions are rendered to DOM
     createQuestion();
     renderQuizQuestion();
-    checkAnswer();
-    correctFeedback();
-    incorrectFeeback();
   })
 };
 

@@ -4,24 +4,33 @@
 }
 
 html {
+  position: absolute;
+  left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
 }
 
 body {
   height: 100%;
+  width: 100%;
+  margin: 0;
   background-color: black;
   color: white;
 }
 
 header {
   width: 100%;
-  height: 15%;
+  height: 5%;
   color: white;
   background-color: rgba(192, 192, 192, 0.089);
   border-bottom: 2px rgba(192, 192, 192, 0.5) solid;
   font-size: 0.6em;
   text-align: center;
+}
+
+legend {
+  width: 100%;
 }
 
 .question-header {
@@ -46,10 +55,16 @@ header {
   height: fit-content;
 }
 
-.container {
+main{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 button {
@@ -82,7 +97,7 @@ fieldset {
   width: 100%;
   font-size: 1em;
   color: white;
-  padding: 10px;
+  padding: 5px;
 }
 
 .example-code-block {
@@ -96,15 +111,27 @@ fieldset {
 .incorrect {
   border: 2px red solid;
   color: white;
-  padding: 5px;
+  padding: 2px;
   width: 100%;
 }
 
 .correct {
   border: 2px green solid;
+  border-radius: 10px;
   color: white;
-  padding: 5px;
+  padding: 2px;
   width: 100%;
+  margin-bottom: 5px;
+}
+
+.incorrect h2, p {
+  margin: 0;
+  padding: 2px;
+}
+
+.correct h2, p {
+  margin: 0;
+  padding: 2px;
 }
 
 .feedback a {
@@ -275,6 +302,14 @@ fieldset {
     font-size: 1.7em;
   }
 
+  .incorrect h2, .incorrect p {
+    padding: 8px;
+  }
+  
+  .correct h2, .correct p {
+    padding: 7px;
+  }
+
   .answer-choice {
     font-size: 1.7em;
     padding: 10px;
@@ -292,6 +327,10 @@ fieldset {
 @media only screen and (min-width: 1000px) {
   header {
     height: 10%;
+  }
+
+  .container {
+    width: 80%;
   }
 
   .quiz-selector-title {
@@ -351,5 +390,8 @@ fieldset {
 }
 
 @media only screen and (min-width: 1500px) {
- 
+ .container {
+   width: 60%;
+
+ }
 }

@@ -8,7 +8,7 @@ let results = [];
 function createQuestion() {
   // better to store code in variable?
   let questionCode =
-    `<main class "quiz">
+    `
   <header>
       <div class="question-header">
           <div class="progress">
@@ -31,7 +31,8 @@ function createQuestion() {
           </div>
       </div>
   </header>
-  <div class="container">
+  <main class "quiz">
+    <div class="container">
       <form class="question-block-form">
           <fieldset>
               <legend>
@@ -54,7 +55,8 @@ function createQuestion() {
               <button type="button" class="next-button" hidden>Next</button>
           </fieldset>
       </form>
-  </div>`;
+    </div>
+  </main>`;
 
   if (quizLocation < 10) {
     return questionCode;
@@ -130,6 +132,7 @@ function incorrectFeeback() {
 }
 //after question submitted, add next button to DOM
 function nextQuestion() {
+
   //increment quiz location
   //increment question number
   //change question number in header

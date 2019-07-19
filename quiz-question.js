@@ -24,7 +24,7 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      `$('.help-button') - In this example all elements with the class .help-button would be selected.<p>Resource: <a href="https://api.jquery.com/class-selector/" target="_blank">jQuery Class Selectors</a></p>`
+      `$('.help-button') - In this example all elements with the class="help-button" would be selected.<p>Resource: <a href="https://api.jquery.com/class-selector/" target="_blank">jQuery Class Selectors</a></p>`
   },
   {
     id: 2,

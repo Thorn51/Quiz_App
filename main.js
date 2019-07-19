@@ -32,6 +32,10 @@ function createQuestion() {
       </div>
   </header>
   <div class="container">
+      <section class="correct" hidden>
+      </section>
+      <section class="incorrect" hidden>
+      </section>
       <form class="question-block-form">
           <fieldset>
               <legend>
@@ -68,7 +72,7 @@ function renderQuizQuestion() {
 
 // User can select and unselect answer choices
 function selectAnswer() {
-  results.push({ 'question': questionNumber, 'correct': '' });
+  results.push({ 'question': questionNumber, 'correct': null });
   $('.answer-choice').on('click', function (event) {
     event.preventDefault();
     $('.answer-choice').not(this).removeClass('selected');
@@ -78,39 +82,43 @@ function selectAnswer() {
   });
 };
 
-// Submit answer selection
+// Submit answer selection - mentor suggestion change to initCheckAnswer
 function checkAnswer() {
   // check if answer is correct
   $('.check-answer').on('click', function (event) {
     event.preventDefault();
-    alert('I was clicked')
-    if (results[quizLocation].correct === true) {
-      $('.question-block-form').html(correctFeedback());
+    console.log(typeof results[quizLocation].correct);
+    if (results[quizLocation].correct == 'true') {
+      $('.correct').append(correctFeedback()).show();
+      $('container').css('opacity', '0.3');
     } else {
-      $('.question-block-form').html(incorrectFeeback());
+      $('.incorrect').append(incorrectFeeback()).show();
     }
   });
 };
-
+//css z-index 10 above overlay
 // Provide feedback after the asnwer is submitted
 function correctFeedback() {
   // if code example block is present then hide
   // show feedbac based on question result
   // change color of star in header based on right or wrong
   let correctFeeback = ` 
-  <div class="correct">
+  <div>
     <h2>That's Correct!</h2>
     <p>${QUESTIONS[quizLocation].feedback}</p>
+    <button type="button" class="next-button>Next</button>
   </div>`;
+  return correctFeeback;
 };
 
 function incorrectFeeback() {
   let incorrectFeedback = ` 
-  <div class="incorrect">
+  <div>
     <h2>That's Incorrect</h2>
     <p>${QUESTIONS[quizLocation].feedback}</p>
     <button type="button" class="next-button>Next
   </div>`;
+  return incorrectFeedback;
 }
 //after question submitted, add next button to DOM
 function nextQuestion() {
@@ -147,6 +155,8 @@ function startQuiz() {
     createQuestion();
     renderQuizQuestion();
     checkAnswer();
+    correctFeedback();
+    incorrectFeeback();
   })
 };
 

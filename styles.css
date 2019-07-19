@@ -5,16 +5,18 @@
 
 html {
   height: 100%;
+  width: 100%;
 }
 
 body {
   height: 100%;
   background-color: black;
+  color: white;
 }
 
 header {
   width: 100%;
-  height: 5%;
+  height: 15%;
   color: white;
   background-color: rgba(192, 192, 192, 0.089);
   border-bottom: 2px rgba(192, 192, 192, 0.5) solid;
@@ -45,21 +47,9 @@ header {
 }
 
 .container {
-  position: relative;
-  z-index: 1;
-  margin: 10px;
-  opacity: 1;
-}
-
-h2 {
-  color: white;
-  margin: 0px;
-  text-align: left;
-}
-
-p {
-  margin: 0px;
-  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 button {
@@ -73,18 +63,14 @@ button {
   text-align: center;
   border-radius: 10px;
   padding: 1px;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .question-block-form {
-  position: relative;
-  z-index: 5;
   height: 100%;
 }
 
 fieldset {
-  position: relative;
-  z-index: 5;
   height: 100%;
   border: none;
   padding: 0px;
@@ -94,7 +80,6 @@ fieldset {
   text-align: left;
   height: auto;
   width: 100%;
-  margin: 0px;
   font-size: 1em;
   color: white;
   padding: 10px;
@@ -109,32 +94,27 @@ fieldset {
 }
 
 .incorrect {
-  position: relative;
-  z-index: 10;
   border: 2px red solid;
   color: white;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
 }
 
 .correct {
-  position: relative;
-  z-index: 10;
   border: 2px green solid;
   color: white;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
 }
 
-a {
+.feedback a {
   color: white;
-  width: 100%;
 }
+
 
 .answer-choice {
   min-height: 4em;
   width: 100%;
-  background-color: transparent;
   border: 4px solid rgb(49, 49, 77);
   color: white;
   background-color: rgba(7, 7, 41, 0.513);
@@ -142,7 +122,6 @@ a {
   text-align: justify;
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 10px;
 }
 
 .selected {
@@ -218,10 +197,6 @@ a {
     text-align: center;
   }
 
-  .question-block-form {
-    grid-row-gap: 0.4em;
-  }
-
   .question-text {
     font-size: 1.5em;
   }
@@ -260,6 +235,16 @@ a {
     text-align: center;
   }
 
+  .instructions {
+    font-size: 1.5em;
+  }
+
+  .container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
   .jquery-quiz-selector,
   .javascript-quiz-selector,
   .css-quiz-selector,
@@ -277,14 +262,6 @@ a {
   .stars, .score, .progress {
     font-size: 1.5em;
     padding: 10px;
-  }
-
-  .container {
-    flex: 0.85;
-  }
-
-  .question-block-form {
-    grid-row-gap: 0.7em;
   }
 
   .question-text {
@@ -340,20 +317,8 @@ a {
     padding: 20px;
   }
 
-  .container {
-    flex: 0.7;
-  }
-
-  .question-block-form {
-    grid-row-gap: 0.5em;
-  }
-
   .quiz-selection {
     font-size: 2em;
-  }
-
-  p {
-    font-size: 1.7em;
   }
 
   .question-text {
@@ -386,7 +351,5 @@ a {
 }
 
 @media only screen and (min-width: 1500px) {
-  .container {
-    flex: 0.5;
-  }
+ 
 }

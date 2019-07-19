@@ -32,10 +32,6 @@ function createQuestion() {
       </div>
   </header>
   <div class="container">
-      <section class="correct" hidden>
-      </section>
-      <section class="incorrect" hidden>
-      </section>
       <form class="question-block-form">
           <fieldset>
               <legend>
@@ -43,6 +39,8 @@ function createQuestion() {
                   <div class="example-code-block">
                       <code class="prettyprint">${QUESTIONS[quizLocation].exampleCode}</code>
                   </div>
+                  <section class="feedback" hidden>
+                  </section>
               </legend>
               <button type="button" class="answer-choice a"
                   value="${QUESTIONS[quizLocation].answers[0].correct}">${QUESTIONS[quizLocation].answers[0].answerOne}</button>
@@ -53,6 +51,7 @@ function createQuestion() {
               <button type="button" class="answer-choice d"
                   value="${QUESTIONS[quizLocation].answers[3].correct}">${QUESTIONS[quizLocation].answers[3].answerFour}</button>
               <button type="button" class="check-answer" disabled>Check Answer</button>
+              <button type="button" class="next-button" hidden>Next</button>
           </fieldset>
       </form>
   </div>`;
@@ -67,6 +66,11 @@ function createQuestion() {
 // add quiz question to DOM
 function renderQuizQuestion() {
   $('body').html(createQuestion());
+  if (QUESTIONS[quizLocation].exampleCode === null) {
+    $('.example-code-block').hide();
+  } else {
+    $('.example-code-block').show();
+  };
   selectAnswer();
 };
 
@@ -89,10 +93,16 @@ function checkAnswer() {
     event.preventDefault();
     console.log(typeof results[quizLocation].correct);
     if (results[quizLocation].correct == 'true') {
-      $('.correct').append(correctFeedback()).show();
-      $('container').css('opacity', '0.3');
+      $('.feedback').append(correctFeedback()).slideDown();
+      $('.check-answer').hide();
+      $('.next-button').show();
+      $('.answer-choice').prop('disabled', true);
+      score++;
     } else {
-      $('.incorrect').append(incorrectFeeback()).show();
+      $('.feedback').append(incorrectFeeback()).show();
+      $('.check-answer').hide();
+      $('.next-button').show();
+      $('.answer-choice').prop('disabled', true);
     }
   });
 };
@@ -103,20 +113,18 @@ function correctFeedback() {
   // show feedbac based on question result
   // change color of star in header based on right or wrong
   let correctFeeback = ` 
-  <div>
+  <div class="correct">
     <h2>That's Correct!</h2>
     <p>${QUESTIONS[quizLocation].feedback}</p>
-    <button type="button" class="next-button>Next</button>
   </div>`;
   return correctFeeback;
 };
 
 function incorrectFeeback() {
   let incorrectFeedback = ` 
-  <div>
+  <div class="incorrect">
     <h2>That's Incorrect</h2>
     <p>${QUESTIONS[quizLocation].feedback}</p>
-    <button type="button" class="next-button>Next
   </div>`;
   return incorrectFeedback;
 }

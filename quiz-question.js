@@ -24,14 +24,14 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'jQuery(".myClass") - In this example all elements with the class .myClass would be selected. <a href="https://api.jquery.com/class-selector/"></a>'
+      `$('.help-button') - In this example all elements with the class .help-button would be selected.<p>Resource: <a href="https://api.jquery.com/class-selector/" target="_blank">jQuery Class Selectors</a></p>`
   },
   {
     id: 2,
     type: "jq",
     question:
       "Question 2?",
-    exampleCode: null,
+    exampleCode: '$(".menu").on("mouseenter", function() {$(".nav-menu").show(500);}).on("mouseleave", function() {$(".nav-menu").hide(500);});',
     answers: [
       {
         answerOne: "Answer A",

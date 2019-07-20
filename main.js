@@ -104,7 +104,6 @@ function checkAnswer() {
       $('.next-button').show();
       $('.answer-choice').prop('disabled', true);
       score++;
-      $('.score').change();
     } else {
       $('.feedback').append(incorrectFeeback()).show();
       $('.check-answer').hide();
@@ -139,7 +138,6 @@ function incorrectFeeback() {
 function nextQuestion() {
   $('.next-button').on('click', function (event) {
     event.preventDefault();
-    alert('I was clicked')
     //increment quiz location
     quizLocation++;
     //increment question number

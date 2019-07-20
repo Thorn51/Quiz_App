@@ -82,13 +82,14 @@ function renderQuizQuestion() {
 
 // User can select and unselect answer choices
 function selectAnswer() {
-  results.push({ 'question': questionNumber, 'correct': null });
+  results.push({ 'question': questionNumber, 'correct': null, starId: null });
   $('.answer-choice').on('click', function (event) {
     event.preventDefault();
     $('.answer-choice').not(this).removeClass('selected');
     $(this).toggleClass('selected')
     $('.check-answer').removeAttr('disabled');
     results[quizLocation].correct = $(this).val();
+    results[quizLocation].starId = QUESTIONS[quizLocation].star;
   });
 };
 
@@ -97,7 +98,6 @@ function checkAnswer() {
   // check if answer is correct
   $('.check-answer').on('click', function (event) {
     event.preventDefault();
-    console.log(typeof results[quizLocation].correct);
     if (results[quizLocation].correct == 'true') {
       $('.feedback').append(correctFeedback()).slideDown();
       $('.check-answer').hide();
@@ -109,7 +109,8 @@ function checkAnswer() {
       $('.check-answer').hide();
       $('.next-button').show();
       $('.answer-choice').prop('disabled', true);
-    }
+    };
+    stars();
   });
 };
 //css z-index 10 above overlay
@@ -147,13 +148,25 @@ function nextQuestion() {
   })
 };
 
+//control the star progress bar
+function stars() {
+  for (i = 0; i < results.length; i++) {
+    if (results[i].correct === null) {
+      $(results[i].starId).toggleClass('stars')
+    } else if (results[i].correct === 'true') {
+      $(results[i].starId).toggleClass('star-correct')
+    } else {
+      $(results[i].starId).toggleClass('star-incorrect')
+    };
+  };
+}
 // when all 10 questions are answered 
 function finishQuiz() {
   //Show finish button on DOM
 };
 
 //display results on DOM
-function resultCalcs() {
+function renderResultPage() {
   //calculate score
   //render results on DOM
   //render restart button on DOM (Does restart reset quiz variables?)

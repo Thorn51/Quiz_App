@@ -24,7 +24,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      `$('.help-button') - In this example all elements with the class="help-button" would be selected.<p>Resource: <a href="https://api.jquery.com/class-selector/" target="_blank">jQuery Class Selectors</a></p>`
+      `$('.help-button') - In this example all elements with the class="help-button" would be selected.<p>Resource: <a href="https://api.jquery.com/class-selector/" target="_blank">jQuery Class Selectors</a></p>`,
+    star: "#st1"
   },
   {
     id: 2,
@@ -50,7 +51,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'This event listner is triggered when the mouse enters the element area, and is triggered again when the mouse leaves. <p>Resources: <a href="https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</p><p><a href="https://api.jquery.com/mouseleave/" target="_blank"</a>jQuery .mouseleave()</p>'
+      'This event listner is triggered when the mouse enters the element area, and is triggered again when the mouse leaves. <p>Resources: <a href="https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</p><p><a href="https://api.jquery.com/mouseleave/" target="_blank"</a>jQuery .mouseleave()</p>',
+    star: "#st2"
   },
   {
     id: 3,
@@ -76,7 +78,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'The call in this example is the duration it takes the animation to show the paragraph element and is measured in miliseconds. <p>Resource: <a href="https://api.jquery.com/show/" target="_blank">jQuery .show()</a></p>'
+      'The call in this example is the duration it takes the animation to show the paragraph element and is measured in miliseconds. <p>Resource: <a href="https://api.jquery.com/show/" target="_blank">jQuery .show()</a></p>',
+    star: "#st3"
   },
   {
     id: 4,
@@ -102,7 +105,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'event.preventDefault(); - If this method is called, the default action of the event will not be triggered. <p>Resource: <a href="https://api.jquery.com/event.preventdefault/" target="_blank">jQuery event.preventDefault()</a><p>'
+      'event.preventDefault(); - If this method is called, the default action of the event will not be triggered. <p>Resource: <a href="https://api.jquery.com/event.preventdefault/" target="_blank">jQuery event.preventDefault()</a><p>',
+    star: "#st4"
   },
   {
     id: 5,
@@ -128,7 +132,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'Inside a callback function on an event listener, this refers to event.currentTarget. So anywhere that you have been typing out event.currentTarget, you can replace it with the this keyword. <p>Resource: <a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/3" target="_blank">Thinkful Interactive Web Apps - Event Listners</a><p>'
+      'Inside a callback function on an event listener, this refers to event.currentTarget. So anywhere that you have been typing out event.currentTarget, you can replace it with the this keyword. <p>Resource: <a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/3" target="_blank">Thinkful Interactive Web Apps - Event Listners</a><p>',
+    star: "#st5"
   },
   {
     id: 6,
@@ -154,7 +159,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      '$("#reveal") - In this example all elements with the id="myClass" would be selected. <p>Resource: <a href="https://api.jquery.com/id-selector/" target="_blank">jQuery ID Selector ("#id")</a></p>'
+      '$("#reveal") - In this example all elements with the id="myClass" would be selected. <p>Resource: <a href="https://api.jquery.com/id-selector/" target="_blank">jQuery ID Selector ("#id")</a></p>',
+    star: "#st6"
   },
   {
     id: 7,
@@ -181,7 +187,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      '$(‘.help’).on(‘click’, function() {}); uses the correct syntax and event handler for a click listner. <p>Resource: <a href="https://learn.jquery.com/events/handling-events/" target="_blank">Handling Events</a></p>'
+      '$(‘.help’).on(‘click’, function() {}); uses the correct syntax and event handler for a click listner. <p>Resource: <a href="https://learn.jquery.com/events/handling-events/" target="_blank">Handling Events</a></p>',
+    star: "#st7"
   },
   {
     id: 8,
@@ -208,7 +215,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'A page can\'t be manipulated safely until the document is "ready." jQuery detects this state of readiness for you using $( document ).ready(). <p>Resource: <a href="https://learn.jquery.com/using-jquery-core/document-ready/" target="_blank">jQuery $( document ).ready()</a></p>'
+      'A page can\'t be manipulated safely until the document is "ready." jQuery detects this state of readiness for you using $( document ).ready(). <p>Resource: <a href="https://learn.jquery.com/using-jquery-core/document-ready/" target="_blank">jQuery $( document ).ready()</a></p>',
+    star: "#st8"
   },
   {
     id: 9,
@@ -235,7 +243,8 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'In this block of code the jQuery library is listening for the mouse to enter the area. Resource: <p><a https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</a></p>'
+      'In this block of code the jQuery library is listening for the mouse to enter the area. Resource: <p><a https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</a></p>',
+    star: "#st9"
   },
   {
     id: 10,
@@ -262,6 +271,7 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'jQuery can utlize the .toggleClass() mehtod to alter an elements class and use css to target the new class with different styling. <p>Resource: <a href="https://api.jquery.com/toggleclass/" target="_blank">jQuery .toggleClass()</a></p>'
+      'jQuery can utlize the .toggleClass() mehtod to alter an elements class and use css to target the new class with different styling. <p>Resource: <a href="https://api.jquery.com/toggleclass/" target="_blank">jQuery .toggleClass()</a></p>',
+    star: "#st10"
   }
 ];

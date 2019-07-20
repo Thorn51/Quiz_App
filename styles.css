@@ -45,6 +45,14 @@ legend {
   text-align: center;
 }
 
+.star-incorrect {
+  color: red;
+}
+
+.star-correct {
+  color: green;
+}
+
 .progress {
   flex: .1;
   height: fit-content;

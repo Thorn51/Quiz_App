@@ -20,12 +20,10 @@ body {
 }
 
 header {
-  width: 100%;
-  height: 5%;
   color: white;
   background-color: rgba(192, 192, 192, 0.089);
   border-bottom: 2px rgba(192, 192, 192, 0.5) solid;
-  font-size: 0.6em;
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -35,14 +33,14 @@ legend {
 
 .question-header {
   display: flex;
-  flex-direction: row;
+  height: 10%;
 }
 
 .stars {
-  flex: 0.7;
-  height: fit-content;
+  flex: 0.6;
   color: darkgray;
   text-align: center;
+  padding: 5px;
 }
 
 .star-incorrect {
@@ -54,23 +52,24 @@ legend {
 }
 
 .progress {
-  flex: .1;
+  flex: .2;
   height: fit-content;
+  padding: 5px;
 }
 
 .score {
-  flex: .1;
-  height: fit-content;
+  flex: .2;
+  padding: 5px;
 }
 
 main{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
 }
 
 .container {
-  width: 100%;
+  flex: .9;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -174,7 +173,7 @@ fieldset {
   font-size: 1em;
 }
 
-.next-button {
+.next-button, .finish-button {
   min-height: 4em;
   width: 100%;
   background-color: green;
@@ -246,7 +245,7 @@ fieldset {
     font-size: 1em;
     padding: 10px;
   }
-  .next-button {
+  .next-button, .finish-button  {
     font-size: 1em;
   }
 
@@ -323,7 +322,7 @@ fieldset {
     padding: 10px;
   }
 
-  .next-button {
+  .next-button, .finish-button  {
     font-size: 1.7em;
   }
 
@@ -384,7 +383,7 @@ fieldset {
     padding: 15px;
   }
 
-  .next-button {
+  .next-button, .finish-button  {
     font-size: 1.5em;
   }
 

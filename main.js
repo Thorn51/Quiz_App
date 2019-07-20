@@ -8,29 +8,29 @@ function createQuestion() {
   // better to store code in variable?
   let questionCode =
     `
-  <header>
-      <div class="question-header">
-          <div class="progress">
-              <span class="question-numbers">${questionNumber}/10</span>
-          </div>
-          <div class="stars">
-              <span id="st1" class="fa fa-star"></span>
-              <span id="st2" class="fa fa-star"></span>
-              <span id="st3" class="fa fa-star"></span>
-              <span id="st4" class="fa fa-star"></span>
-              <span id="st5" class="fa fa-star"></span>
-              <span id="st6" class="fa fa-star"></span>
-              <span id="st7" class="fa fa-star"></span>
-              <span id="st8" class="fa fa-star"></span>
-              <span id="st9" class="fa fa-star"></span>
-              <span id="st10" class="fa fa-star"></span>
-          </div>
-          <div class="score">
-              <span>Score ${score}</span>
-          </div>
-      </div>
-  </header>
-  <main class "quiz">
+  <main class"quiz-page">
+    <header>
+        <div class="question-header">
+            <div class="progress">
+                <span class="question-numbers">${questionNumber}/10</span>
+            </div>
+            <div class="stars">
+                <span id="st1" class="fa fa-star"></span>
+                <span id="st2" class="fa fa-star"></span>
+                <span id="st3" class="fa fa-star"></span>
+                <span id="st4" class="fa fa-star"></span>
+                <span id="st5" class="fa fa-star"></span>
+                <span id="st6" class="fa fa-star"></span>
+                <span id="st7" class="fa fa-star"></span>
+                <span id="st8" class="fa fa-star"></span>
+                <span id="st9" class="fa fa-star"></span>
+                <span id="st10" class="fa fa-star"></span>
+            </div>
+            <div class="score">
+                <span>Score ${score}</span>
+            </div>
+        </div>
+    </header>
     <div class="container">
       <form class="question-block-form">
           <fieldset>
@@ -97,14 +97,22 @@ function checkAnswer() {
     if (results[quizLocation].correct == 'true') {
       $('.feedback').append(correctFeedback()).slideDown();
       $('.check-answer').hide();
-      $('.next-button').show();
       $('.answer-choice').prop('disabled', true);
       score++;
+      if (questionNumber < 10) {
+        $('.next-button').show();
+      } else {
+        $('.finish-button').show();
+      };
     } else {
       $('.feedback').append(incorrectFeeback()).show();
       $('.check-answer').hide();
-      $('.next-button').show();
       $('.answer-choice').prop('disabled', true);
+      if (questionNumber < 10) {
+        $('.next-button').show();
+      } else {
+        $('.finish-button').show();
+      };
     };
     stars();
   });
@@ -158,7 +166,10 @@ function stars() {
 }
 // when all 10 questions are answered 
 function finishQuiz() {
-  //Show finish button on DOM
+  $('.finish-button').on('click', function (event) {
+    event.preventDefault();
+
+  })
 };
 
 //perfrom calculations for results
@@ -183,39 +194,33 @@ function resultsPageFeedback() {
 function createResultsPage() {
   resultsPageFeedback();
   let resultsPage = `
-  <header>
-  <h1 class="quiz-selector-title">Thinkful Quiz</h1>
-  </header>
-  <main class="results">
-    <div class="container">
-      <section class="pass" hidden>
-        <h2>${quizScorePercentage}</h2>
-        <p>Excellent job on your jQuery quiz! You are ready to venture forth on your studies.</p>
-        <p>Next Up -> Module 10 - <a href="https://thinkful.typeform.com/to/yAylea?email=mtberry16%40hotmail.com&enrollment_id=61924">Program Manager: Mastering Captstones and Mock Interviews - Self Reflection</a></p>
-      </section>
-      <section class="average" hidden>
-        <h2>${quizScorePercentage}</h2>
-        <p>It looks like you could use some more time studying jQuery</p>
-        <p>Here are some excellent resources:</p>
-          <ul>
-            <li><a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/1" target="_blank">Thinkful Interactive Web Apps</a></li>
-            <li><a href="https://jquery.com/" target="_blank">jQuery.com</a></li>
-            <li><a href="https://learn.freecodecamp.org/front-end-libraries/jquery/" target="_blank">freeCodeCamp - Introduction to jQuery</a></li>
-          </ul>
-      </section>
-      <button type="button" class="restart-quiz">
-        Restart Quiz
-      </button>
-      <button type="button" class="select-new-quiz">
-        Select a Different Quiz
-      </button>
-    </div>
-  </main>
-  `
-}
+    <section class="pass" hidden>
+      <h2>${quizScorePercentage}%</h2>
+      <p>Excellent job on your jQuery quiz! You are ready to venture forth on your studies.</p>
+      <p>Next Up -> Module 10 - <a href="https://thinkful.typeform.com/to/yAylea?email=mtberry16%40hotmail.com&enrollment_id=61924">Program Manager: Mastering Captstones and Mock Interviews - Self Reflection</a></p>
+    </section>
+    <section class="average" hidden>
+      <h2>${quizScorePercentage}%</h2>
+      <p>It looks like you could use some more time studying jQuery</p>
+      <p>Here are some excellent resources:</p>
+        <ul>
+          <li><a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/1" target="_blank">Thinkful Interactive Web Apps</a></li>
+          <li><a href="https://jquery.com/" target="_blank">jQuery.com</a></li>
+          <li><a href="https://learn.freecodecamp.org/front-end-libraries/jquery/" target="_blank">freeCodeCamp - Introduction to jQuery</a></li>
+        </ul>
+    </section>
+    <button type="button" class="restart-quiz">
+      Restart Quiz
+    </button>
+    <button type="button" class="select-new-quiz">
+      Select a Different Quiz
+    </button>
+  `;
+  return resultsPage;
+};
 //display results on DOM
 function renderResultPage() {
-  //calculate score
+
   //render results on DOM
   //render restart button on DOM (Does restart reset quiz variables?)
   //render select a different quiz on DOM 
@@ -228,7 +233,7 @@ function startQuiz() {
     //stop default behavior
     event.preventDefault();
     // quiz selection choices are hidden
-    $('index').remove();
+    $('.index-page').remove();
     // questions are rendered to DOM
     createQuestion();
     renderQuizQuestion();

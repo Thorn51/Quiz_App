@@ -12,33 +12,39 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="quiz-selector-title">Thinkful Quiz</h1>
-  </header>
-  <main class="index">
-    <div class=".container">
-      <h2 class="quiz-selection">
-        What would you like to be quizzed on?
-      </h2>
-      <div class="instructions">
-        <p>Select one of the topics below to start a 10 question quiz.</p>
-      </div>
-      <button type="button" class="jquery-quiz-selector" value="jq">jQuery</button>
-      <button type="button" class="javascript-quiz-selector" disabled>
-        JavaScript - Coming Soon!
-      </button>
-      <button type="button" class="css-quiz-selector" disabled>
-        CSS - Coming Soon!
-      </button>
-      <button type="button" class="html-quiz-selector" disabled>
-        HTML -Coming Soon!
-      </button>
+  <main class="index-page">
+    <header>
+      <h1 class="quiz-selector-title">Thinkful Quiz</h1>
+    </header>
+    <div class="container">
+      <form class="quiz-choices">
+        <fieldset>
+          <legend>
+            <h2 class="quiz-selection">
+              What would you like to be quizzed on?
+            </h2>
+            <div class="instructions">
+              <p>Select one of the topics below to start a 10 question quiz.</p>
+            </div>
+          </legend>
+          <button type="button" class="jquery-quiz-selector" value="jq">jQuery</button>
+          <button type="button" class="javascript-quiz-selector" disabled>
+            JavaScript - Coming Soon!
+          </button>
+          <button type="button" class="css-quiz-selector" disabled>
+            CSS - Coming Soon!
+          </button>
+          <button type="button" class="html-quiz-selector" disabled>
+            HTML -Coming Soon!
+          </button>
+        </fieldset>
+      </form>
     </div>
+    <footer></footer>
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script src="quiz-question.js"></script>
   </main>
-  <footer></footer>
-  <script src="http://code.jquery.com/jquery.min.js"></script>
-  <script src="main.js"></script>
-  <script src="quiz-question.js"></script>
 </body>
 
 </html>

@@ -194,7 +194,7 @@ const QUESTIONS = [
     id: 8,
     type: "jq",
     question:
-      "Which of the following would you use to esnure a page can be safely manipulated",
+      "Which of the following would you use to esnure a page can be safely manipulated?",
     exampleCode: null,
     answers: [
       {

@@ -1,4 +1,3 @@
-let quizType = "";
 let quizLocation = 0;
 let score = 0;
 let questionNumber = 1;
@@ -52,17 +51,13 @@ function createQuestion() {
               <button type="button" class="answer-choice d"
                   value="${QUESTIONS[quizLocation].answers[3].correct}">${QUESTIONS[quizLocation].answers[3].answerFour}</button>
               <button type="button" class="check-answer" disabled>Check Answer</button>
-              <button type="button" class="next-button" hidden>Next</button>
+              <button type="button" class="next-button" hidden>Next Question</button>
+              <button type="button" class="finish-button" hidden>Finish Quiz</button>
           </fieldset>
       </form>
     </div>
   </main>`;
-
-  if (quizLocation < 10) {
-    return questionCode;
-  } else {
-    finishQuiz();
-  };
+  return questionCode;
 };
 
 // add quiz question to DOM
@@ -78,6 +73,7 @@ function renderQuizQuestion() {
   correctFeedback();
   incorrectFeeback();
   nextQuestion();
+  stars();
 };
 
 // User can select and unselect answer choices
@@ -152,11 +148,11 @@ function nextQuestion() {
 function stars() {
   for (i = 0; i < results.length; i++) {
     if (results[i].correct === null) {
-      $(results[i].starId).toggleClass('stars')
+      $(results[i].starId).toggleClass('stars');
     } else if (results[i].correct === 'true') {
-      $(results[i].starId).toggleClass('star-correct')
+      $(results[i].starId).toggleClass('star-correct');
     } else {
-      $(results[i].starId).toggleClass('star-incorrect')
+      $(results[i].starId).toggleClass('star-incorrect');
     };
   };
 }
@@ -165,6 +161,58 @@ function finishQuiz() {
   //Show finish button on DOM
 };
 
+//perfrom calculations for results
+function resultsCalcs(score) {
+  let quizScorePercentage = score / 10;
+  let incorrectAnswersTotal = 10 - score;
+  return quizScorePercentage, incorrectAnswersTotal;
+}
+
+//results feedaback
+function resultsPageFeedback() {
+  resultsCalcs();
+  if (quizScorePercentage >= 80) {
+    $('.pass').show();
+  } else {
+    $('.average').show();
+  }
+}
+
+
+//create results page
+function createResultsPage() {
+  resultsPageFeedback();
+  let resultsPage = `
+  <header>
+  <h1 class="quiz-selector-title">Thinkful Quiz</h1>
+  </header>
+  <main class="results">
+    <div class="container">
+      <section class="pass" hidden>
+        <h2>${quizScorePercentage}</h2>
+        <p>Excellent job on your jQuery quiz! You are ready to venture forth on your studies.</p>
+        <p>Next Up -> Module 10 - <a href="https://thinkful.typeform.com/to/yAylea?email=mtberry16%40hotmail.com&enrollment_id=61924">Program Manager: Mastering Captstones and Mock Interviews - Self Reflection</a></p>
+      </section>
+      <section class="average" hidden>
+        <h2>${quizScorePercentage}</h2>
+        <p>It looks like you could use some more time studying jQuery</p>
+        <p>Here are some excellent resources:</p>
+          <ul>
+            <li><a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/1" target="_blank">Thinkful Interactive Web Apps</a></li>
+            <li><a href="https://jquery.com/" target="_blank">jQuery.com</a></li>
+            <li><a href="https://learn.freecodecamp.org/front-end-libraries/jquery/" target="_blank">freeCodeCamp - Introduction to jQuery</a></li>
+          </ul>
+      </section>
+      <button type="button" class="restart-quiz">
+        Restart Quiz
+      </button>
+      <button type="button" class="select-new-quiz">
+        Select a Different Quiz
+      </button>
+    </div>
+  </main>
+  `
+}
 //display results on DOM
 function renderResultPage() {
   //calculate score
@@ -179,8 +227,6 @@ function startQuiz() {
   $('.jquery-quiz-selector').on('click', function (event) {
     //stop default behavior
     event.preventDefault();
-    //set quiz type
-    quizType = $('.jquery-quiz-selector').val();
     // quiz selection choices are hidden
     $('index').remove();
     // questions are rendered to DOM

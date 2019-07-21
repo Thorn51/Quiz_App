@@ -7,31 +7,31 @@ Process Requirements:
         - Your wireframe should include minimal CSS and no JavaScript. @done
         - Store your wireframe on GitHub and deploy it to GitHub pages. @done
     - Stage 2
-        - Refer back to the user stories we asked you to consider in a previous checkpoint. Use them to keep sight of what features your app still needs as you go along.
-        - Next create function stubs with pseudocode in your JavaScript.
-        - One by one, fully implement each function.
-        - Once your application is working, add CSS styling to make it look good.
+        - Refer back to the user stories we asked you to consider in a previous checkpoint. Use them to keep sight of what features your app still needs as you go along. @done
+        - Next create function stubs with pseudocode in your JavaScript. @done
+        - One by one, fully implement each function. @done
+        - Once your application is working, add CSS styling to make it look good. @done
 
 
 User Experience Requirements:
-    - The starting scren should have a button that users can click to start the quiz.
-    - Users should be prompted through a series of at least 5 muiltiple choice questions that they can answser.
-        - Users should be asked questions 1 after the other
-        - Users should only be prompted with 1 questions at a time.
-    - Users should not be able to skip questions
-    - Users should also be able to see which questions they're on (for instance, "7 out of 10") and their current score ("5 correct, 2 incorrect").
-    - Upon submitting an answer, users should:
-        - receive textual feedback about their answer. If they were incorrect, they should be told the correct answer.
-        - be moved onto the next question (or interact withn an element to move on).
-    - Users should be shown tehir overall score at the end of the quiz. In other words, how many questions they got right of the total questions asked
-    - Users should be able to start a new quiz.
+    - The starting scren should have a button that users can click to start the quiz. @done
+    - Users should be prompted through a series of at least 5 muiltiple choice questions that they can answser. @done
+        - Users should be asked questions 1 after the other @done
+        - Users should only be prompted with 1 questions at a time. @done
+    - Users should not be able to skip questions @done
+    - Users should also be able to see which questions they're on (for instance, "7 out of 10") and their current score ("5 correct, 2 incorrect"). @done
+    - Upon submitting an answer, users should: @done
+        - receive textual feedback about their answer. If they were incorrect, they should be told the correct answer. @done
+        - be moved onto the next question (or interact withn an element to move on). @done
+    - Users should be shown tehir overall score at the end of the quiz. In other words, how many questions they got right of the total questions asked @done
+    - Users should be able to start a new quiz. @done
 
-Technical Requirements (the quiz app must):
-    - Render answer choices in a <form>.
-    - User semantic HTML, along with CSS and jQuery
-    - Follow a11y best practices
-    - User responsive design.
-    - be fully usable by keyboard.
+Technical Requirements (the quiz app must): 
+    - Render answer choices in a <form>. @done
+    - User semantic HTML, along with CSS and jQuery @done
+    - Follow a11y best practices @done
+    - User responsive design. @done
+    - be fully usable by keyboard. @done
 
 
 

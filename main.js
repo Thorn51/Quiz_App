@@ -74,6 +74,7 @@ function renderQuizQuestion() {
   incorrectFeeback();
   nextQuestion();
   stars();
+  finishQuiz();
 };
 
 // User can select and unselect answer choices
@@ -98,12 +99,12 @@ function checkAnswer() {
       $('.feedback').append(correctFeedback()).slideDown();
       $('.check-answer').hide();
       $('.answer-choice').prop('disabled', true);
-      score++;
       if (questionNumber < 10) {
         $('.next-button').show();
       } else {
         $('.finish-button').show();
       };
+      calculateScore();
     } else {
       $('.feedback').append(incorrectFeeback()).show();
       $('.check-answer').hide();
@@ -163,67 +164,95 @@ function stars() {
       $(results[i].starId).toggleClass('star-incorrect');
     };
   };
-}
+};
 // when all 10 questions are answered 
 function finishQuiz() {
   $('.finish-button').on('click', function (event) {
     event.preventDefault();
-
-  })
+    $('.question-page').remove();
+    renderResultPage();
+    resultsPageFeedback();
+  });
 };
 
 //perfrom calculations for results
-function resultsCalcs(score) {
-  let quizScorePercentage = score / 10;
-  let incorrectAnswersTotal = 10 - score;
-  return quizScorePercentage, incorrectAnswersTotal;
+function calculateScore() {
+  score++;
 }
 
 //results feedaback
 function resultsPageFeedback() {
-  resultsCalcs();
-  if (quizScorePercentage >= 80) {
-    $('.pass').show();
+  if (score >= 8) {
+    $('.average').hide();
   } else {
-    $('.average').show();
-  }
-}
+    $('.pass').hide();
+  };
+};
 
 
 //create results page
 function createResultsPage() {
   resultsPageFeedback();
   let resultsPage = `
-    <section class="pass" hidden>
-      <h2>${quizScorePercentage}%</h2>
-      <p>Excellent job on your jQuery quiz! You are ready to venture forth on your studies.</p>
-      <p>Next Up -> Module 10 - <a href="https://thinkful.typeform.com/to/yAylea?email=mtberry16%40hotmail.com&enrollment_id=61924">Program Manager: Mastering Captstones and Mock Interviews - Self Reflection</a></p>
-    </section>
-    <section class="average" hidden>
-      <h2>${quizScorePercentage}%</h2>
-      <p>It looks like you could use some more time studying jQuery</p>
-      <p>Here are some excellent resources:</p>
-        <ul>
-          <li><a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/1" target="_blank">Thinkful Interactive Web Apps</a></li>
-          <li><a href="https://jquery.com/" target="_blank">jQuery.com</a></li>
-          <li><a href="https://learn.freecodecamp.org/front-end-libraries/jquery/" target="_blank">freeCodeCamp - Introduction to jQuery</a></li>
-        </ul>
-    </section>
-    <button type="button" class="restart-quiz">
-      Restart Quiz
-    </button>
-    <button type="button" class="select-new-quiz">
-      Select a Different Quiz
-    </button>
-  `;
+  <main class="results-page">
+    <header>
+      <h1 class="quiz-selector-title">Results</h1>
+    </header>
+    <div class="container">
+      <section class="pass">
+        <h2>You Scored ${score} out of 10 on the jQuery Quiz</h2>
+        <p>Excellent job! You are ready to venture forth on your studies.</p>
+        <p>Next Up Module 10 - <a href="https://thinkful.typeform.com/to/yAylea?email=mtberry16%40hotmail.com&enrollment_id=61924">Program Manager: Mastering Captstones and Mock Interviews - Self Reflection</a></p>
+      </section>
+      <section class="average">
+        <h2>You scored ${score} out of 10 on the jQuery Quiz</h2>
+        <p>It looks like you could use some more time studying jQuery</p>
+        <p>Here are some excellent resources:</p>
+          <ul>
+            <li><a href="https://courses.thinkful.com/interactive-web-apps-v1/checkpoint/1" target="_blank">Thinkful Interactive Web Apps</a></li>
+            <li><a href="https://jquery.com/" target="_blank">jQuery.com</a></li>
+            <li><a href="https://learn.freecodecamp.org/front-end-libraries/jquery/" target="_blank">freeCodeCamp - Introduction to jQuery</a></li>
+          </ul>
+      </section>
+      <button type="button" class="restart-quiz">
+        Restart Quiz
+      </button>
+      <button type="button" class="select-new-quiz">
+        Select a Different Quiz
+      </button>
+    </div>
+  </main>`;
   return resultsPage;
 };
+
 //display results on DOM
 function renderResultPage() {
-
+  $('body').html(createResultsPage());
+  restartQuiz();
+  quizChoices();
   //render results on DOM
-  //render restart button on DOM (Does restart reset quiz variables?)
-  //render select a different quiz on DOM 
+};
+
+function resetVariables() {
+  quizLocation = 0;
+  score = 0;
+  questionNumber = 1;
+  results = [];
+}
+
+function restartQuiz() {
+  $('.restart-quiz').on('click', function (event) {
+    $('.results-page').remove();
+    resetVariables();
+    renderQuizQuestion();
+  });
+}
+
+function quizChoices() {
+  $('.select-new-quiz').on('click', function () {
+    location.reload();
+    resetVariables();
+  });
 }
 
 //start the quiz

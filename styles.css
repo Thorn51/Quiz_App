@@ -226,6 +226,35 @@ fieldset {
   opacity: 0.3;
 }
 
+.pass {
+  border: 2px green solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.pass.p {
+  padding: 5px;
+}
+
+.average {
+  border: 2px red solid;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.average>p, .pass>p {
+  padding: 10px;
+}
+
+
+a {
+  color: white;
+  padding: 15px;
+}
+
+
 @media only screen and (min-width: 375px) {
   .quiz-selection {
     text-align: center;
@@ -252,7 +281,7 @@ fieldset {
   .check-answer {
     font-size: 1em;
   }
-}
+ }
 
 @media only screen and (min-width: 700px) {
   header {
@@ -326,8 +355,13 @@ fieldset {
     font-size: 1.7em;
   }
 
-  .check-answer {
+  .check-answer, .restart-quiz, .select-new-quiz {
     font-size: 1.7em;
+  }
+
+  .average, .pass {
+    font-size: 1.8em;
+    padding: 10px;
   }
 }
 

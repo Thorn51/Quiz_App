@@ -51,7 +51,7 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'This event listner is triggered when the mouse enters the element area, and is triggered again when the mouse leaves. <p>Resources: <a href="https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</p><p><a href="https://api.jquery.com/mouseleave/" target="_blank"</a>jQuery .mouseleave()</p>',
+      'This event listner is triggered when the mouse enters the element area, and is triggered again when the mouse leaves. <p>Resources:</p> <ul><li><a href="https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</li><li><a href="https://api.jquery.com/mouseleave/" target="_blank">jQuery .mouseleave()</a></li>',
     star: "#st2"
   },
   {
@@ -243,7 +243,7 @@ const QUESTIONS = [
       }
     ],
     feedback:
-      'In this block of code the jQuery library is listening for the mouse to enter the area. Resource: <p><a https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</a></p>',
+      'In this block of code the jQuery library is listening for the mouse to enter the area. <p>Resource: <a href="https://api.jquery.com/mouseenter/" target="_blank">jQuery .mouseenter()</a></p>',
     star: "#st9"
   },
   {
